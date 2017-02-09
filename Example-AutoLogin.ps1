@@ -11,7 +11,7 @@ new-itemproperty -path "HKLM:\software\microsoft\Windows NT\currentversion\winlo
 #Better way, as a function!
 
 Function Add-Autologin{
-	Param(
+    Param(
     [cmdletBinding()]
     [parameter(Mandatory=$true,Position=0)]
     [string]$DefaultUser,
