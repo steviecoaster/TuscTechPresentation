@@ -21,3 +21,17 @@ Measure-Command -Expression { Invoke-Command -Session $Session -ScriptBlock { Ge
 #Using a computer name
 Measure-Command -Expression { Invoke-Command -ComputerName tusc-print -ScriptBlock { Get-Service | Where { $PSItem.Status -eq 'Running'} } }
 
+#Implicit Remoting
+
+$containsmodule = "tusc-print"
+$Session = New-PSSession -ComputerName $containsmodule
+
+Invoke-Command -Session $Session -ScriptBlock {Import-Module PrintManagement}
+
+Import-PSSession $Session -Module PrintManagement -Prefix demo
+
+#Use module from other machine locally
+
+Get-demoADComputer beethoven
+
+# MIND = BLOWN, right?

@@ -11,11 +11,8 @@ new-itemproperty -path "HKLM:\software\microsoft\Windows NT\currentversion\winlo
 #Better way, as a function!
 
 Function Add-Autologin{
-<<<<<<< HEAD
-	Param(
-=======
+
     Param(
->>>>>>> 873201723120dfc65eca79b81edd5548413c8155
     [cmdletBinding()]
     [parameter(Mandatory=$true,Position=0)]
     [string]$DefaultUser,
@@ -39,8 +36,5 @@ Function Add-Autologin{
 
     Write-Verbose -Message "All operations completed, exiting..."
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 873201723120dfc65eca79b81edd5548413c8155
+
